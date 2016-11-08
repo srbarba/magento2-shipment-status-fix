@@ -21,7 +21,7 @@ class ShipmentRepositoryExtension {
 		foreach ($result->getAllItems() as $item) {
 
 			$orderItem = $item->getOrderItem();
-			$orderItem->setQtyShipped( $item->getQty() );
+			$orderItem->setQtyShipped( $orderItem->getQtyShipped() + $item->getQty() );
 			$orderItem->save();
 
 		}
